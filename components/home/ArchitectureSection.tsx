@@ -1,4 +1,5 @@
 import { BrainCircuit, Gauge, LockKeyhole, Route, ScrollText, UsersRound } from "lucide-react";
+import { entryLinks } from "./entry-links";
 import { GlowCard } from "./GlowCard";
 import { SectionTitle } from "./SectionTitle";
 
@@ -7,7 +8,7 @@ const hubCapabilities = ["接入", "路由", "分发", "调度", "监控"];
 const landingProducts = [
   { label: "P1" },
   { label: "LLM 私有化" },
-  { label: "供应链 AI", href: "/aiscm" },
+  { label: "供应链 AI", href: entryLinks.aiscm },
   { label: "AI 运营 OS" }
 ];
 const controls = [
@@ -31,7 +32,7 @@ export function ArchitectureSection() {
         <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
           <GlowCard className="p-5 md:p-8">
             <a
-              href="/login?next=/aip"
+              href={entryLinks.aip}
               className="block rounded-[20px] border border-cyan-200/35 bg-cyan-200/10 p-6 text-center transition hover:border-cyan-100/70 hover:bg-cyan-200/15"
               aria-label="进入 AIP 登录页"
             >

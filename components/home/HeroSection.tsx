@@ -1,8 +1,9 @@
 import { ArrowRight, BadgeCheck, Cpu, Network, ShieldCheck, Sparkles } from "lucide-react";
 import { AnimatedGridBackground } from "./AnimatedGridBackground";
+import { entryLinks, primaryEntries } from "./entry-links";
 
 const stackItems = [
-  { label: "企业 AI 管理中台 AIP", detail: "权限 / 成本 / 安全 / 审计 / 效能", icon: ShieldCheck, href: "/login?next=/aip" },
+  { label: "企业 AI 管理中台 AIP", detail: "权限 / 成本 / 安全 / 审计 / 效能", icon: ShieldCheck, href: entryLinks.aip },
   { label: "ModelHub 模型网关", detail: "模型接入 / 路由 / 分发 / 监控", icon: Network },
   { label: "业务落地层", detail: "P1 / LLM 私有化 / 供应链 AI / AI 运营 OS", icon: Cpu }
 ];
@@ -10,7 +11,7 @@ const stackItems = [
 const landingShortcuts = [
   { label: "P1" },
   { label: "私有模型" },
-  { label: "供应链 AI", href: "/aiscm" },
+  { label: "供应链 AI", href: entryLinks.aiscm },
   { label: "运营 OS" }
 ];
 
@@ -32,13 +33,13 @@ export function HeroSection() {
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#cta"
+              href={entryLinks.contact}
               className="home-scan relative inline-flex min-h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-[#1E7BFF] px-7 py-3 font-semibold text-white shadow-[0_0_34px_rgba(30,123,255,0.46)] after:absolute after:inset-y-0 after:w-16 after:bg-white/25 after:blur-md"
             >
               预约 AI 转型咨询 <ArrowRight size={18} />
             </a>
             <a
-              href="#architecture"
+              href={entryLinks.architecture}
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-cyan-200/35 px-7 py-3 font-semibold text-cyan-100 transition hover:border-cyan-100/70 hover:bg-cyan-100/10"
             >
               查看产品架构
@@ -50,6 +51,19 @@ export function HeroSection() {
               核心团队来自阿里 / 字节 / 平安 / 华为
             </p>
             <p>多年大厂 AI 产品与研发落地经验，覆盖企业系统、供应链数字化、本地化部署与 Agent 工作流设计。</p>
+          </div>
+          <div className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
+            {primaryEntries.map((entry) => (
+              <a
+                key={entry.href}
+                href={entry.href}
+                className="group rounded-2xl border border-cyan-200/20 bg-cyan-100/5 p-4 transition hover:border-cyan-100/70 hover:bg-cyan-100/10"
+              >
+                <span className="text-xs font-semibold text-cyan-200">{entry.status}</span>
+                <span className="mt-2 block font-bold text-white group-hover:text-cyan-100">{entry.label}</span>
+                <span className="mt-1 block text-xs leading-5 text-[#A9B8D8]">{entry.description}</span>
+              </a>
+            ))}
           </div>
         </div>
 

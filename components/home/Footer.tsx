@@ -1,3 +1,5 @@
+import { entryLinks } from "./entry-links";
+
 export function Footer() {
   return (
     <footer className="border-t border-cyan-200/15 px-6 py-10">
@@ -7,16 +9,19 @@ export function Footer() {
           <p className="mt-2">统一模型底座，管理企业 AI，落地业务智能化。</p>
         </div>
         <div className="flex flex-wrap gap-4">
-          <a href="/login?next=/aip" className="hover:text-cyan-100">
+          <a href={entryLinks.aip} className="hover:text-cyan-100">
             进入 AIP
           </a>
-          <a href="#products" className="hover:text-cyan-100">
+          <a href={entryLinks.aiscm} className="hover:text-cyan-100">
+            进入 AISCM
+          </a>
+          <a href={entryLinks.products} className="hover:text-cyan-100">
             产品矩阵
           </a>
-          <a href="#architecture" className="hover:text-cyan-100">
+          <a href={entryLinks.architecture} className="hover:text-cyan-100">
             架构能力
           </a>
-          <a href="#cta" className="hover:text-cyan-100">
+          <a href={entryLinks.contact} className="hover:text-cyan-100">
             联系合作
           </a>
         </div>

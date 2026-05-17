@@ -2,14 +2,15 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { entryLinks } from "./entry-links";
 
 const navItems = [
-  { label: "产品矩阵", href: "#products" },
-  { label: "架构能力", href: "#architecture" },
-  { label: "解决方案", href: "#solutions" },
-  { label: "安全合规", href: "#security" },
-  { label: "实施路径", href: "#implementation" },
-  { label: "团队背景", href: "#team" }
+  { label: "产品矩阵", href: entryLinks.products },
+  { label: "架构能力", href: entryLinks.architecture },
+  { label: "解决方案", href: entryLinks.solutions },
+  { label: "安全合规", href: entryLinks.security },
+  { label: "实施路径", href: entryLinks.implementation },
+  { label: "团队背景", href: entryLinks.team }
 ];
 
 export function Header() {
@@ -32,7 +33,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-3" aria-label="返回首页首屏">
+        <a href={entryLinks.home} className="flex items-center gap-3" aria-label="返回首页首屏">
           <span className="grid h-11 w-11 place-items-center rounded-xl border border-cyan-200/50 bg-cyan-200/10 text-sm font-black text-cyan-100 shadow-[0_0_22px_rgba(0,213,255,0.22)]">
             AI
           </span>
@@ -52,19 +53,19 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="/login?next=/aip"
+            href={entryLinks.aip}
             className="rounded-full border border-cyan-200/30 px-5 py-2 text-sm text-cyan-100 transition hover:border-cyan-100/70 hover:bg-cyan-100/10"
           >
             进入 AIP
           </a>
           <a
-            href="#cta"
+            href={entryLinks.contact}
             className="rounded-full border border-cyan-200/30 px-5 py-2 text-sm text-cyan-100 transition hover:border-cyan-100/70 hover:bg-cyan-100/10"
           >
             获取方案
           </a>
           <a
-            href="#cta"
+            href={entryLinks.contact}
             className="home-scan relative overflow-hidden rounded-full bg-[#1E7BFF] px-5 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(30,123,255,0.42)] after:absolute after:inset-y-0 after:w-14 after:bg-white/25 after:blur-md"
           >
             预约咨询
@@ -95,12 +96,12 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/login?next=/aip"
+              href={entryLinks.aip}
               className="rounded-full border border-cyan-200/30 px-5 py-3 text-center text-sm font-semibold text-cyan-100"
             >
               进入 AIP
             </a>
-            <a href="#cta" className="rounded-full bg-[#1E7BFF] px-5 py-3 text-center text-sm font-semibold text-white">
+            <a href={entryLinks.contact} className="rounded-full bg-[#1E7BFF] px-5 py-3 text-center text-sm font-semibold text-white">
               预约 AI 转型咨询
             </a>
           </nav>

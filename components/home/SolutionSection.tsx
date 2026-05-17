@@ -1,13 +1,14 @@
 import { ArrowUpRight, Code2, Factory, LineChart, ShoppingBag, Warehouse } from "lucide-react";
+import { entryLinks } from "./entry-links";
 import { GlowCard } from "./GlowCard";
 import { SectionTitle } from "./SectionTitle";
 
 const solutions = [
-  { title: "电商运营", text: "智能获客 / 自动选品 / 动态定价 / 素材生成 / 智能投放 / AI 客服", icon: ShoppingBag },
-  { title: "供应链管理", text: "需求预测 / 自动补货 / 视觉质检 / 智能库位 / 供应商协同 / 库存预警", icon: Warehouse, href: "/aiscm" },
-  { title: "企业内部系统", text: "审批系统 / 经营看板 / 仓储操作台 / 销售知识库 / 数据查询工具", icon: Factory },
-  { title: "研发提效", text: "需求生成 / 页面生成 / 代码生成 / Code Review / 测试用例生成 / 灰度部署", icon: Code2 },
-  { title: "管理层经营分析", text: "AI 经营看板 / 异常预警 / 成本分析 / 人效分析 / 安全审计 / 业务问答", icon: LineChart }
+  { title: "电商运营", text: "智能获客 / 自动选品 / 动态定价 / 素材生成 / 智能投放 / AI 客服", icon: ShoppingBag, href: entryLinks.contact, cta: "获取运营方案" },
+  { title: "供应链管理", text: "需求预测 / 自动补货 / 视觉质检 / 智能库位 / 供应商协同 / 库存预警", icon: Warehouse, href: entryLinks.aiscm, cta: "进入 AISCM" },
+  { title: "企业内部系统", text: "审批系统 / 经营看板 / 仓储操作台 / 销售知识库 / 数据查询工具", icon: Factory, href: entryLinks.aip, cta: "进入 AIP" },
+  { title: "研发提效", text: "需求生成 / 页面生成 / 代码生成 / Code Review / 测试用例生成 / 灰度部署", icon: Code2, href: entryLinks.contact, cta: "咨询 P1 方案" },
+  { title: "管理层经营分析", text: "AI 经营看板 / 异常预警 / 成本分析 / 人效分析 / 安全审计 / 业务问答", icon: LineChart, href: entryLinks.aip, cta: "查看 AIP 看板" }
 ];
 
 export function SolutionSection() {
@@ -37,7 +38,7 @@ export function SolutionSection() {
                 <p className="mt-5 text-sm leading-7 text-[#A9B8D8]">{solution.text}</p>
                 {solution.href ? (
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-amber-100">
-                    进入 AISCM <ArrowUpRight size={15} />
+                    {solution.cta} <ArrowUpRight size={15} />
                   </span>
                 ) : null}
               </GlowCard>
@@ -48,7 +49,7 @@ export function SolutionSection() {
             }
 
             return (
-              <a key={solution.title} href={solution.href} className="block h-full" aria-label="进入 AISCM 供应链 AI 首页">
+              <a key={solution.title} href={solution.href} className="block h-full" aria-label={`${solution.cta}，${solution.title}`}>
                 {card}
               </a>
             );

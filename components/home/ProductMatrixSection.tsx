@@ -1,9 +1,10 @@
 import { ArrowUpRight, Blocks, Bot, Boxes, ChartNoAxesCombined, Cpu, ShieldCheck } from "lucide-react";
+import { entryLinks } from "./entry-links";
 import { GlowCard } from "./GlowCard";
 import { SectionTitle } from "./SectionTitle";
 
-const aipLoginHref = "/login?next=/aip";
-const aiscmHref = "/aiscm";
+const aipLoginHref = entryLinks.aip;
+const aiscmHref = entryLinks.aiscm;
 
 const products = [
   {
@@ -20,21 +21,27 @@ const products = [
     english: "Model Gateway / ModelHub",
     description: "统一接入原厂模型、开源模型、云端模型与本地模型，根据任务、成本、时延和安全等级自动路由。",
     tags: ["模型接入", "智能路由", "调用分发", "限流熔断", "成本统计", "调用监控"],
-    icon: Bot
+    icon: Bot,
+    href: entryLinks.contact,
+    cta: "获取接入方案"
   },
   {
     title: "LLM 私有化部署与微调蒸馏",
     english: "Private Deployment & Fine-tuning",
     description: "构建企业专属大模型，沉淀行业知识与业务推理能力，实现数据不出域的安全智能化。",
     tags: ["本地部署", "行业微调", "知识注入", "模型蒸馏", "RAG", "安全推理"],
-    icon: Cpu
+    icon: Cpu,
+    href: entryLinks.contact,
+    cta: "咨询私有化部署"
   },
   {
     title: "本地 0 代码开发平台 P1",
     english: "AI Native App Builder",
     description: "通过自然语言生成页面、流程、表单、报表与代码，帮助企业快速构建内部系统和业务工具。",
     tags: ["自然语言生成", "页面生成", "流程编排", "代码生成", "本地交付", "二次开发"],
-    icon: Blocks
+    icon: Blocks,
+    href: entryLinks.contact,
+    cta: "咨询 P1 方案"
   },
   {
     title: "供应链 AI 应用套件",
@@ -50,7 +57,9 @@ const products = [
     english: "AI Growth & Operations OS",
     description: "打通智能获客、自动选品、动态定价、素材生成、智能投放与 AI 客服，形成增长运营闭环。",
     tags: ["智能获客", "自动选品", "动态定价", "素材生成", "智能投放", "经营分析"],
-    icon: ChartNoAxesCombined
+    icon: ChartNoAxesCombined,
+    href: entryLinks.contact,
+    cta: "咨询运营方案"
   }
 ];
 
@@ -73,13 +82,9 @@ export function ProductMatrixSection() {
                   <span className="grid h-12 w-12 place-items-center rounded-2xl border border-cyan-200/30 bg-cyan-200/10 text-cyan-100">
                     <Icon size={22} />
                   </span>
-                  {product.href ? (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-cyan-200/20 px-3 py-1 text-xs text-cyan-100 transition group-hover:border-cyan-100/70 group-hover:bg-cyan-100/10">
-                      {product.cta} <ArrowUpRight size={13} />
-                    </span>
-                  ) : (
-                    <span className="rounded-full border border-cyan-200/20 px-3 py-1 text-xs text-cyan-100">规划中</span>
-                  )}
+                  <span className="inline-flex items-center gap-1 rounded-full border border-cyan-200/20 px-3 py-1 text-xs text-cyan-100 transition group-hover:border-cyan-100/70 group-hover:bg-cyan-100/10">
+                    {product.cta} <ArrowUpRight size={13} />
+                  </span>
                 </div>
                 <h3 className="text-xl font-bold leading-8 text-white">{product.title}</h3>
                 <p className="mt-2 text-sm font-semibold text-cyan-200">{product.english}</p>
@@ -99,10 +104,6 @@ export function ProductMatrixSection() {
                 </div>
               </GlowCard>
             );
-
-            if (!product.href) {
-              return <div key={product.title}>{card}</div>;
-            }
 
             return (
               <a key={product.title} href={product.href} className="block h-full" aria-label={`${product.cta}：${product.title}`}>
