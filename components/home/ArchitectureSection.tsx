@@ -21,7 +21,7 @@ const controls = [
 
 export function ArchitectureSection() {
   return (
-    <section id="architecture" className="relative px-6 py-24 md:py-28">
+    <section id="architecture" className="relative px-6 py-16 md:py-20">
       <div className="mx-auto max-w-[1200px]">
         <SectionTitle
           eyebrow="Architecture"

@@ -6,7 +6,7 @@ const securityItems = ["字段级脱敏", "本地模型处理", "云端模型分
 
 export function SecuritySection() {
   return (
-    <section id="security" className="px-6 py-24 md:py-28">
+    <section id="security" className="px-6 py-16 md:py-20">
       <div className="mx-auto max-w-[1200px]">
         <SectionTitle
           eyebrow="Security"

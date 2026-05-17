@@ -18,7 +18,7 @@ export function HeroSection() {
   return (
     <section id="top" className="relative min-h-screen overflow-hidden pt-28">
       <AnimatedGridBackground />
-      <div className="relative mx-auto grid max-w-[1200px] gap-12 px-6 pb-20 pt-12 md:pt-20 lg:grid-cols-[1.03fr_0.97fr] lg:items-center">
+      <div className="relative mx-auto grid max-w-[1200px] gap-10 px-6 pb-14 pt-10 md:pt-16 lg:grid-cols-[1.03fr_0.97fr] lg:items-center">
         <div className="home-fade-up">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200/35 bg-cyan-200/10 px-4 py-2 text-sm text-cyan-100">
             <Sparkles size={16} />

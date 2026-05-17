@@ -56,7 +56,7 @@ const products = [
 
 export function ProductMatrixSection() {
   return (
-    <section id="products" className="px-6 py-24 md:py-28">
+    <section id="products" className="px-6 py-16 md:py-20">
       <div className="mx-auto max-w-[1200px]">
         <SectionTitle
           eyebrow="Products"

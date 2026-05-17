@@ -7,7 +7,7 @@ const skills = ["AI 产品设计", "企业系统架构", "大模型应用落地"
 
 export function TeamSection() {
   return (
-    <section id="team" className="px-6 py-24 md:py-28">
+    <section id="team" className="px-6 py-16 md:py-20">
       <div className="mx-auto max-w-[1200px]">
         <SectionTitle
           eyebrow="Team"

@@ -27,7 +27,7 @@ const steps = [
 
 export function ImplementationSection() {
   return (
-    <section id="implementation" className="px-6 py-24 md:py-28">
+    <section id="implementation" className="px-6 py-16 md:py-20">
       <div className="mx-auto max-w-[1200px]">
         <SectionTitle
           eyebrow="Roadmap"
